@@ -17,7 +17,7 @@ function Counter() {
     }
 
     function handleSet() {
-        dispatch({ type: 'set', payload: state.value })
+        dispatch({ type: 'set', payload: parseInt(state.value) })
     }
 
     function handleInput(e) {
