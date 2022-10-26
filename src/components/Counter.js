@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css'
 import counterReducer from '../hooks/counterHook';
 
@@ -22,6 +23,16 @@ function Counter() {
 
     function handleInput(e) {
         dispatch({ type: 'count', payload: e.target.value })
+    }
+
+    const navigate = useNavigate()
+
+    function handleNavigate404(e) {
+        navigate('/test')
+    }
+
+    function handleNavigateError(e) {
+        navigate('/greeting')
     }
 
     const [state, dispatch] = useReducer(counterReducer, { count: 0, value: 0 });
@@ -49,6 +60,14 @@ function Counter() {
             <div>
                 <button className='counter-btn' onClick={handleSet}>
                     Set
+                </button>
+            </div>
+            <div>
+                <button className='counter-btn' onClick={handleNavigate404}>
+                    404 page test
+                </button>
+                <button className='counter-btn' onClick={handleNavigateError}>
+                    Error boundary test
                 </button>
             </div>
         </div>
