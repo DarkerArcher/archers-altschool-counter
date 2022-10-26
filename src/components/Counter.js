@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css'
 import counterReducer from '../hooks/counterHook';
+import SEO from './SEO';
 
 function Counter() {
 
@@ -38,39 +39,45 @@ function Counter() {
     const [state, dispatch] = useReducer(counterReducer, { count: 0, value: 0 });
 
     return (
-        <div className='counter'>
-            <div>
-                <span className='counter-count'>{state.count}</span>
+        <>
+            <SEO
+                title={"Archer's AltSchool Counter."}
+                description={"Counter page made for AltSchool Africa."}
+                name={"Ayo Otutuloro."} />
+            <div className='counter'>
+                <div>
+                    <span className='counter-count'>{state.count}</span>
+                </div>
+                <h1>Counter</h1>
+                <div className='counter-btns'>
+                    <button className='counter-btn' onClick={handleIncrement}>
+                        Add
+                    </button>
+                    <button className='counter-btn' onClick={handleReset}>
+                        Reset
+                    </button>
+                    <button className='counter-btn' onClick={handleDecrement}>
+                        Subtract
+                    </button>
+                </div>
+                <div className='input-div'>
+                    <input className='input' type="number" value={state.value} onChange={handleInput} />
+                </div>
+                <div>
+                    <button className='counter-btn' onClick={handleSet}>
+                        Set
+                    </button>
+                </div>
+                <div>
+                    <button className='counter-btn' onClick={handleNavigate404}>
+                        404 page test
+                    </button>
+                    <button className='counter-btn' onClick={handleNavigateError}>
+                        Error boundary test
+                    </button>
+                </div>
             </div>
-            <h1>Counter</h1>
-            <div className='counter-btns'>
-                <button className='counter-btn' onClick={handleIncrement}>
-                    Add
-                </button>
-                <button className='counter-btn' onClick={handleReset}>
-                    Reset
-                </button>
-                <button className='counter-btn' onClick={handleDecrement}>
-                    Subtract
-                </button>
-            </div>
-            <div className='input-div'>
-                <input className='input' type="number" value={state.value} onChange={handleInput} />
-            </div>
-            <div>
-                <button className='counter-btn' onClick={handleSet}>
-                    Set
-                </button>
-            </div>
-            <div>
-                <button className='counter-btn' onClick={handleNavigate404}>
-                    404 page test
-                </button>
-                <button className='counter-btn' onClick={handleNavigateError}>
-                    Error boundary test
-                </button>
-            </div>
-        </div>
+        </>
     )
 }
 
