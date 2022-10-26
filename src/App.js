@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css'
 import { ErrorBoundary } from 'react-error-boundary'
 import { Route, Routes } from 'react-router-dom';
-import { Counter, ErrorFallback, ErrorPage } from './components';
-import Greeting from './components/Greetings';
+import { Counter, ErrorFallback, ErrorPage, ErrorTest } from './components';
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Counter />} />
         <Route path='*' element={<ErrorPage />} />
-        <Route path='/greeting' element={<Greeting />} />
+        <Route path='/greeting' element={<ErrorTest />} />
       </Routes>
     </ErrorBoundary>
   )
