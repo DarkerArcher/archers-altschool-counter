@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Patua+One&family=Raleway&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background-color: #16161a;
+  color: #fffffe;
+}
+
+.counter {
+  max-width: 600px;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.counter-count {
+  font-family: 'Patua One', cursive;
+  font-size: 50px;
+}
+
+.counter-btn {
+  background-color: #7f5af0;
+  color: #fffffe;
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+}
+
+.counter-btn:hover {
+  background-color: #72757e;
+  cursor: pointer;
+}
+
+.input-div {
+  padding: 10px 0 0 0;
+}
+
+.input {
+  border-radius: 5px;
+  border-style: ridge;
+  padding: 10px;
+  background-color: #16161a;
+  color: #94a1b2;
+  font-size: 16px;
+}
+
+.error {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#error-page {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
