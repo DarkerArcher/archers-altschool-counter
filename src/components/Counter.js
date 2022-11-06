@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css'
-import counterReducer from '../hooks/counterHook';
+import counterReducer from '../hooks/counterReducer';
 import SEO from './SEO';
 
 function Counter() {
@@ -34,6 +34,10 @@ function Counter() {
 
     function handleNavigateError(e) {
         navigate('/greeting')
+    }
+
+    function secondCounter(e) {
+        navigate('/secondcounter')
     }
 
     const [state, dispatch] = useReducer(counterReducer, { count: 0, value: 0 });
@@ -74,6 +78,11 @@ function Counter() {
                     </button>
                     <button className='counter-btn' onClick={handleNavigateError}>
                         Error boundary test
+                    </button>
+                </div>
+                <div>
+                    <button className='counter-btn' onClick={secondCounter}>
+                        Second Counter
                     </button>
                 </div>
             </div>

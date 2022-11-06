@@ -1,24 +1,22 @@
-function counterReducer(state, action) {
-    switch (action.type) {
-        case 'increment': {
-            return {...state, count: action.payload }
-        }
-        case 'decrement': {
-            return {...state, count: action.payload }
-        }
-        case 'reset': {
-            return {...state, count: action.payload }
-        }
-        case 'set': {
-            return {...state, count: action.payload }
-        }
-        case 'count': {
-            return {...state, value: action.payload }
-        }
-        default: {
-            return state
-        }
-    }
-}
+import { useState } from "react";
 
-export default counterReducer
+const useCounter = (initialCount) => {
+    const [count, setCount] = useState(0);
+    const [value, setValue] = useState(0)
+
+    const handleChange = (e) => {
+        setValue(e.target.value)
+    }
+
+    return {
+        value: count,
+        increment: () => setCount(prevCount => prevCount + 1),
+        decrement: () => setCount(prevCount => prevCount - 1),
+        reset: () => setCount(0),
+        input: value,
+        onChange: handleChange,
+        set: () => setCount(parseInt(value))
+    };
+};
+
+export default useCounter

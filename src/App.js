@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css'
 import { ErrorBoundary } from 'react-error-boundary'
 import { Route, Routes } from 'react-router-dom';
-import { Counter, ErrorFallback, ErrorPage, ErrorTest } from './components';
+import { Counter, CounterWithHook, ErrorFallback, ErrorPage, ErrorTest, Home } from './components';
 import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
@@ -11,9 +11,11 @@ function App() {
     <HelmetProvider context={helmetContext}>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Routes>
-          <Route path='/' element={<Counter />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/firstcounter' element={<Counter />} />
           <Route path='*' element={<ErrorPage />} />
           <Route path='/greeting' element={<ErrorTest />} />
+          <Route path='/secondcounter' element={<CounterWithHook />} />
         </Routes>
       </ErrorBoundary>
     </HelmetProvider>
