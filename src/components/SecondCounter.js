@@ -28,10 +28,10 @@ function CounterWithHook({ initialCount }) {
                 description={"Counter page made for AltSchool Africa."}
                 name={"Ayo Otutuloro."} />
             <div className='counter'>
+                <h1>Count Your Daily Meals</h1>
                 <div>
                     <span className='counter-count'>{counter.value}</span>
                 </div>
-                <h1>Counter</h1>
                 <div className='counter-btns'>
                     <button className='counter-btn' onClick={counter.increment}>
                         Add
@@ -61,7 +61,7 @@ function CounterWithHook({ initialCount }) {
                 </div>
                 <div>
                     <button className='counter-btn' onClick={firstCounter}>
-                        First Counter
+                        Water Intake Counter
                     </button>
                 </div>
             </div>

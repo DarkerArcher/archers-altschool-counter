@@ -70,6 +70,10 @@ body {
   text-align: center;
 }
 
+.home-header {
+  padding: 10px;
+}
+
 .home-content {
   max-width: 600px;
   margin: auto;

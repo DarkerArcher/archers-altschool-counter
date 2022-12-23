@@ -14,18 +14,18 @@ function Home() {
         <div className="home-content">
             <div >
                 <h1 className="home-header">
-                    Welcome.
+                    Shall we play a game?
                 </h1>
                 <p>
-                    Click the links below to see the counters.
+                    Track your diet with the counters below.
                 </p>
             </div>
             <div>
                 <button className='counter-btn' onClick={firstCounter}>
-                    First Counter
+                    Water Intake Counter
                 </button>
                 <button className='counter-btn' onClick={secondCounter}>
-                    Second Counter
+                    Food Intake Counter
                 </button>
             </div>
         </div>

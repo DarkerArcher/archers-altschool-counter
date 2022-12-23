@@ -49,10 +49,10 @@ function Counter() {
                 description={"Counter page made for AltSchool Africa."}
                 name={"Ayo Otutuloro."} />
             <div className='counter'>
+                <h1>Track Your Water Intake In Cups.</h1>
                 <div>
                     <span className='counter-count'>{state.count}</span>
                 </div>
-                <h1>Counter</h1>
                 <div className='counter-btns'>
                     <button className='counter-btn' onClick={handleIncrement}>
                         Add
@@ -82,7 +82,7 @@ function Counter() {
                 </div>
                 <div>
                     <button className='counter-btn' onClick={secondCounter}>
-                        Second Counter
+                        Food Intake Counter
                     </button>
                 </div>
             </div>
